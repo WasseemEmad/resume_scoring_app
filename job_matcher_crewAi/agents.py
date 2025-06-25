@@ -14,7 +14,7 @@ resume_agent = Agent(
         "You work with NER models and language models to enhance data quality and fill in missing details."
     ),
     tools=[extracted_data,ResumeTools.read_resume],
-    llm=ChatOpenAI(model="gpt-4o-mini"),  # Optional, but best to add explicitly
+    llm=ChatOpenAI(model="gpt-4o-mini"), 
     verbose=True
 )
 
@@ -27,7 +27,7 @@ job_scorer_agent = Agent(
         "Your job is to score the resume according to the job description and return the job information with the score. "
     ),
     tools=[fetch_jobs,get_score],
-    llm=ChatOpenAI(model="gpt-4o-mini"),  # Optional, but best to add explicitly
+    llm=ChatOpenAI(model="gpt-4o-mini"), 
     verbose=True
 )
 
@@ -39,6 +39,6 @@ messaging_agent = Agent(
         "Your job is to send message for the job with a high score"
     ),
     tools=[Messaging.send_message],
-    llm=ChatOpenAI(model="gpt-4o-mini"),  # Optional, but best to add explicitly
+    llm=ChatOpenAI(model="gpt-4o-mini"), 
     verbose=True
 )
