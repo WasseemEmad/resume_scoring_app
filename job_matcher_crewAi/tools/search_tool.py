@@ -1,4 +1,3 @@
-# tools/resume_tools.py
 from langchain.tools import tool
 import config
 import pymongo
