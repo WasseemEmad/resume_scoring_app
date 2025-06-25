@@ -37,9 +37,8 @@ job_display_placeholder = st.container()
 
 
 # BASE_URL for FastAPI backend
-BASE_URL = "http://localhost:8000"  # Change if deployed elsewhere
+BASE_URL = "http://localhost:8000"  
 
-# ----------------- Existing Buttons -----------------
 with st.sidebar:
     st.markdown("## 🔧 Actions")
 
