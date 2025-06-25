@@ -52,9 +52,6 @@ This version leverages [CrewAI](https://crewai.com) to orchestrate specialized A
 - `Messaging`: Sends alerts via Pushover
 
 ### 🌀 Crew Workflow
-
-```mermaid
-flowchart TD
   A[User Uploads Resume] --> B[ResumeAgent]
   B --> C[Extracted Skills & Info]
   C --> D[JobScorerAgent]
@@ -75,14 +72,14 @@ flowchart TD
 
 ## ⚖️ FastAPI Version vs CrewAI Version
 
-| Feature                        | FastAPI Version                        | CrewAI Version                            |
-|-------------------------------|----------------------------------------|-------------------------------------------|
-| 🧠 Intelligence Handling       | Centralized logic in endpoints         | Distributed via autonomous AI agents      |
-| 🧰 Tool Integration           | Manual inside each route or function   | Defined as modular tools used by agents   |
-| 📡 Orchestration              | Procedural API calls                   | Dynamic multi-agent planning & execution  |
-| 🧾 Resume Parsing              | spaCy + OpenAI + FastAPI endpoint      | Agent-based using same toolset            |
-| 🧮 Job Scoring                | Triggered by API request               | Performed by a reasoning agent            |
-| 🔔 Notification               | FastAPI-triggered via endpoint         | Messaging agent handles push alerts       |
+| 🔧 Feature              | ⚡ FastAPI Version                           | 🤖 CrewAI Version                             |
+|------------------------|---------------------------------------------|-----------------------------------------------|
+| 🧠 Intelligence         | Centralized in API endpoints                | Decentralized via autonomous AI agents        |
+| 🧰 Tool Integration     | Manually handled inside routes/functions    | Modular tools defined and used by agents      |
+| 📡 Orchestration        | Sequential, procedural API calls            | Dynamic multi-agent planning & execution      |
+| 🧾 Resume Parsing       | spaCy + OpenAI via endpoint                 | Handled by dedicated resume agent             |
+| 🧮 Job Scoring          | Triggered manually via POST request         | Done by reasoning agent with LLM evaluation   |
+| 🔔 Notification         | Pushover via explicit endpoint              | Messaging agent sends push notifications      |
 
 
 > ✅ **Use the FastAPI version** if you want a REST API interface or integration into web apps.  
