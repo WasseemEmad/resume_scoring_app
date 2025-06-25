@@ -52,13 +52,29 @@ This version leverages [CrewAI](https://crewai.com) to orchestrate specialized A
 - `Messaging`: Sends alerts via Pushover
 
 ### 🌀 Crew Workflow
-  A[User Uploads Resume] --> B[ResumeAgent]
-  B --> C[Extracted Skills & Info]
-  C --> D[JobScorerAgent]
-  D --> E[SearchTool]
-  E --> F[Scored Jobs]
-  F --> G[MessagingAgent]
-  G --> H[Top Jobs Notified to User]
+- User Uploads Resume:
+  The process begins when a user uploads their resume to the system.
+
+- ResumeAgent Takes Over:
+  The ResumeAgent receives the resume and is responsible for processing it.
+
+- Skills & Information Extracted:
+  The agent uses NLP tools (spaCy + OpenAI) to extract skills, experiences, and relevant personal info from the resume.
+
+- JobScorerAgent Engages:
+  This extracted data is passed to the JobScorerAgent, whose role is to find matching jobs and score their relevance.
+
+- SearchTool Activated:
+  The JobScorerAgent invokes the SearchTool to search or scrape live job listings relevant to the candidate's profile.
+
+- Jobs Are Scored:
+  The system evaluates how well each job matches the resume using GPT-based reasoning and scoring.
+
+- MessagingAgent Takes Over:
+  Once scoring is complete, the MessagingAgent filters the top matches.
+
+- Top Jobs Notified to User:
+  The user receives a push notification (via Pushover) listing the best-matching jobs for them.
 
 ## 📦 Tech Stack
  - FastAPI – API Framework
@@ -66,7 +82,7 @@ This version leverages [CrewAI](https://crewai.com) to orchestrate specialized A
  - Streamlit - Frontend
  - MongoDB – Job storage
  - spaCy – Custom NER for skill extraction
- - OpenAI GPT (e.g. gpt-4o) – Reasoning + rating + classification
+ - OpenAI GPT (e.g. gpt-4o-mini) – Reasoning + rating + classification
  - Pushover – Notification system
 
 
